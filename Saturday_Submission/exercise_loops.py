@@ -2,23 +2,24 @@
 
 print("***QUESTION 1***")
 
-# all_nums = []
+# Sorry Hayley - I had already written this bit before our class on Tuesday so didn't use the same method you did!
 
-# while True:
-#     try:
-#         if len(all_nums) == 0:
-#             num = int(input("Enter a number! "))
-#             all_nums.append(num)     
-#         else:
-#             num = int(input("Enter a number, or press enter: "))
-#             all_nums.append(num)
-#     except ValueError:
-#         break
+all_nums = []
 
+while True:
+    try:
+        if len(all_nums) == 0:
+            num = int(input("Enter a number! "))
+            all_nums.append(num)     
+        else:
+            num = int(input("Enter another number, or press enter: "))
+            all_nums.append(num)
+    except ValueError:
+        break
 
-# sum_nums = sum(all_nums)
+sum_nums = sum(all_nums)
 
-# print(f"The total sum of your numbers is {sum_nums}!")
+print(f"The total sum of your numbers is {sum_nums}!")
 
 # Q2
 
@@ -40,17 +41,17 @@ for i in range(len(mailing_list)):
 
 print("***QUESTION 3***")
 
-# names = []
+names = []
 
-# name_1 = input("Hi there! Type your name: ")
-# names.append(name_1)
-# name_2 = input("Thanks for that! What's your mum's name? ")
-# names.append(name_2)
-# name_3 = input("Last one - what's your dad's name? ")
-# names.append(name_3)
+name_1 = input("Hi there! Type your name: ")
+names.append(name_1)
+name_2 = input("Thanks for that! What's your mum's name? ")
+names.append(name_2)
+name_3 = input("Last one - what's your dad's name? ")
+names.append(name_3)
 
-# for x in names:
-#     print(x)
+for x in names:
+    print(x)
 
 # Q4
 
@@ -90,12 +91,17 @@ total_cost = []
 for i in range(len(groceries)):
     cost = groceries[i][1] * groceries[i][2]
     total_cost.append(cost)
-    space_width = receipt_width - len(groceries[i][0]) - 6
-    print("{}".format(groceries[i][0]) + " " * space_width + "${:.2f}".format(cost))
+    # space_width = receipt_width - len(groceries[i][0]) - 8
+    # print("{}".format(groceries[i][0]) + " " * space_width + "${:.2f}".format(cost))
+    print(f"{groceries[i][0]:<20} ${cost:>5.2f}")
 
 print("=" * receipt_width)
 
 receipt_sum = sum(total_cost)
-sum_str = "${:.2f}".format(receipt_sum)
 
-print(sum_str.rjust(receipt_width, ' '))
+
+
+sum_str = "${:>5.2f}".format(receipt_sum)
+
+print(f"{sum_str:>27}")
+# print(sum_str.rjust(receipt_width, ' '))
